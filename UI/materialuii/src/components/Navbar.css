@@ -1,0 +1,43 @@
+.navbar{
+    height: 9vh;
+    background-color: #063970;
+}
+
+.appbar{
+    height:9vh;
+    /* background-color: 'primary.dark'; */
+    background-color: #063970;
+    /* background-color:royalblue; */
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.leftNavbar,.midNavbar,.rightNavbar {
+    display: flex;
+}
+
+.leftNavbar{
+    /* background-color: red; */
+    width:20%;
+    align-items: center;
+    justify-content: center;
+    gap:7%;
+}
+
+.midNavbar{
+    /* background-color: yellow; */
+    width:60%;
+    justify-content: space-evenly;
+    /* gap:5%; */
+}
+
+.rightNavbar{
+    /* background-color: green; */
+    width:15%;
+    height:69%;
+}
+

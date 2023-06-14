@@ -1,0 +1,50 @@
+.BOOX{
+    /* background-color:  #94a3b8; */
+    background-image: url('cover1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity:1;
+    display: flex;
+    flex-wrap: wrap;
+   
+  }
+
+  .subClass {
+     display: flex;
+     flex-direction: column;
+     gap:10px;
+    }
+  
+    .subClass1,.subClass2,.subClass3,.subClass4,.subClass5,.subClass6{
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+    }
+
+    .subClass31{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width:46%;
+      box-sizing: border-box;
+    }
+
+.radioGroup{
+  display: flex;
+  flex-direction: row;
+}
+
+.subClass61{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:10px;
+  align-items: center;
+}
+
+.subClass7{
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin: 0 20% 0 25%;
+}

@@ -1,0 +1,3 @@
+upper :#ede9fe
+
+product : #e2e8f0
