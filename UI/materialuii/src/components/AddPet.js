@@ -1,10 +1,13 @@
-import { Box, Button, FormControl, Modal, TextField, Typography } from "@mui/material";
+import { Box, Button, FormControl, Modal, TextField } from "@mui/material";
 import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { fetchData } from "./data/dataAction";
 
 const AddPet = (props) => {
 
-    const { open, setOpen, fetchData } = props;
+    
+    const { open, setOpen } = props;
 
     const [breed, setBreed] = useState('');
     const [age, setAge] = useState(null);
@@ -30,12 +33,12 @@ const AddPet = (props) => {
 
           try {
                 const response = await axios.post(`https://localhost:7097/pet/addPet`, body);
+                toast("Pet added successfully");
               } catch (error) {
                 console.error('Error adding entry:', error);
               }
               fetchData();
               setOpen(false)
-
       };
 
     return (
@@ -51,7 +54,6 @@ const AddPet = (props) => {
                 transform: "translate(-50%, -50%)",
                 bgcolor: "#FFF",
                 p: 4,
-
             }}>              
              <form onSubmit={handleSubmit}>
                 <Box sx={{display: 'flex', flexDirection: 'column'}}>

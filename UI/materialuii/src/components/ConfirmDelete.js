@@ -1,10 +1,11 @@
 import { Box, Button, Modal, Typography } from "@mui/material";
 import axios from "axios";
 import React from "react";
+import { fetchData } from "./data/dataAction";
 
 const ConfirmDelete = (props) => {
 
-    const { open, setOpen, fetchData, deleteData } = props;
+    const { open, setOpen, deleteData } = props;
 
     var id = deleteData && deleteData.id;
 

@@ -38,3 +38,30 @@
     transform: rotate(360deg);
   }
 }
+
+/* .toast-body {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+} */
+
+/* Override the default toast container styles */
+/* .ReactToastify__toast-container {
+  top: 0;
+  right: 0;
+  margin: 1em;
+  z-index: 9999;
+} */
+
+/* Override the default toast styles */
+/* .ReactToastify__toast {
+  border-radius: 4px;
+} */
+
+/* Override the default toast body styles */
+/* .ReactToastify__toast-body {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+} */
+

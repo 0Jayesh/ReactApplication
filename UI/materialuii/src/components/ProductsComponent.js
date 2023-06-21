@@ -4,18 +4,14 @@ import AppPagination from './AppPagination';
 import {Chip,Avatar,Alert,AlertTitle, Stack,Box, IconButton,
      Card,CardMedia, CardContent, CardActions,Button,Typography, 
      CardHeader,Pagination, Select, MenuItem, Menu, TextField} from '@mui/material'
-import CreateIcon from '@mui/icons-material/Create';
-import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios'
 import {useSelector,useDispatch} from 'react-redux'
 import { fetchData } from './data/dataAction';
 
 function ProductsComponent() {
 
-  const getTheData = useSelector(state => state.products)
+  const getTheData = useSelector(state => state.data.products)
   const dispatch = useDispatch()
-  // const [posts,setPosts] = useState([])
-  // const [loading,setLoading] = useState(false)
   const [sortFilter,setSortFilter] = useState(1)
   const [sortData,setSortData] = useState(1)
   const [currentPage,setCurrentPage] = useState(1)
@@ -24,16 +20,6 @@ function ProductsComponent() {
   const indexOfFirstPost = indexOfLastPost - cardsPerPage;
   
   const [searchText,setSearchText] = useState('')
-
-  // const [fetchData,setFetchData] = useState([])
-
-  // useEffect(( )=> {
-  //   axios.get('https://dummyjson.com/products')
-  //   .then(res => {
-  //     setFetchData(res.data.products)
-  //     console.log(fetchData)
-  //   })
-  // },[])
 
   const filterContent = {
        display:'flex',
@@ -67,21 +53,15 @@ function ProductsComponent() {
       }
   }
 
-
-
-
   const fetchTheData = () => {
     axios.get('https://dummyjson.com/products')
     .then(res => {
       dispatch(fetchData(res.data.products))
-      // setFetchData(res.data.products)
-      // console.log(res.data.products)
     })
   }
  
   useEffect(() => {
     fetchTheData()
-    // console.log(getTheData, 'getthedara')
   },[])
   
   const handleSortData = (e) => {
@@ -100,14 +80,6 @@ function ProductsComponent() {
     setCurrentPage(p)
   }
 
-  // {
-  //   sortData == 1 || sortData == 2 ?
-  //    :
-  //   sortData == 3 ?
-  //   getTheData.sort((a,b) => a.price - b.price) :
-  //   getTheData.sort((a,b) => b.price - a.price)
-  // }
-
   var filteredData = []
 
   {
@@ -121,37 +93,12 @@ function ProductsComponent() {
     filteredData = getTheData.sort((a,b) => b.price - a.price)
   }
 
-  // const currentPosts = filteredData.slice(indexOfFirstPost,indexOfLastPost)
-
-  console.log({filteredData})
-  console.log(searchText)
-
   var filteredSearchTextArray = filteredData.filter((user) =>
       user.title.toLowerCase().includes(searchText.toLowerCase())
   )
 
   const currentPosts = filteredSearchTextArray.slice(indexOfFirstPost,indexOfLastPost)
 
-
-  console.log(filteredSearchTextArray)
-
-  // var filteredSearchTextArray = []
-
-  // {
-  //   searchText == '' ?
-  //   filteredSearchTextArray = currentPosts :
-  //   filteredSearchTextArray.filter(ele => 
-  //       ele.description.toLowerCase().includes('tree')
-  //     ) 
-  // }
-
-  // {
-  //   console.log(filteredSearchTextArray)
-  // }
-
-
-  // const filteredData = getTheData
-  // const currentPosts = filteredData.slice(indexOfFirstPost,indexOfLastPost)
   const totalCards = filteredSearchTextArray.length
   const count=Math.ceil(totalCards/cardsPerPage)
 

@@ -67,7 +67,7 @@ function Footer() {
   return (
    <>
     <Stack
-    sx={{ backgroundColor: '#063970',color:'white',width:'100%'}}
+    sx={{ backgroundColor: '#063970',color:'white',width:'100%', marginBottom: 'auto'}}
     fullWidth
     >
         <Stack
