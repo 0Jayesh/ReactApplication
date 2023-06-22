@@ -4,7 +4,6 @@ import React from "react";
 import { fetchData } from "./data/dataAction";
 
 const ConfirmDelete = (props) => {
-
     const { open, setOpen, deleteData } = props;
 
     var id = deleteData && deleteData.id;

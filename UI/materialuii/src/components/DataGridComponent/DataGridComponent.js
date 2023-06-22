@@ -4,9 +4,9 @@ import {useState,useEffect} from 'react';
 import {DataGrid} from '@mui/x-data-grid'
 import axios from 'axios'
 import {useSelector,useDispatch} from 'react-redux'
-import {fetchPets} from './data/dataAction'
-import ConfirmDelete from './ConfirmDelete.js';
-import AddPet from './AddPet.js';
+import {fetchPets} from '../data/dataAction'
+import ConfirmDelete from '../ConfirmDelete.js';
+import AddPet from '../AddPet.js';
 
 function DataGridComponent() {
 
@@ -19,7 +19,7 @@ function DataGridComponent() {
 
     useEffect(() => {
       dispatch(fetchPets());
-    })
+    },[dispatch])
 
     const onClickDelete = (row) => {
         setDeleteData(row)

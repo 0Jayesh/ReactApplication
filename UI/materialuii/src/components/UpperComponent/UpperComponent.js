@@ -5,11 +5,9 @@ import './UpperComponent.css'
 
 function UpperComponent() {
 
-  
-
   return (
     <>
-    <Box className='upperBox'>
+    <Box className='upperBox' sx={{height: '100%'}}>
       <Typography variant="h1">GAME CITY</Typography><br />
       <Typography variant="h5">Select your game:</Typography>
       <Button color="success" size="small" variant="contained" sx={{backgroundColor:'purple'}}>NFS</Button>&nbsp;

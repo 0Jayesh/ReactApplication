@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './ProductsComponent.css'
-import AppPagination from './AppPagination';
+import AppPagination from '../AppPagination';
 import {Chip,Avatar,Alert,AlertTitle, Stack,Box, IconButton,
      Card,CardMedia, CardContent, CardActions,Button,Typography, 
      CardHeader,Pagination, Select, MenuItem, Menu, TextField} from '@mui/material'
 import axios from 'axios'
 import {useSelector,useDispatch} from 'react-redux'
-import { fetchData } from './data/dataAction';
+import { fetchData } from '../data/dataAction';
 
 function ProductsComponent() {
 
